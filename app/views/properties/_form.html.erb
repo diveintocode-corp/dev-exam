@@ -1,0 +1,30 @@
+<%= form_with(model: Property.new, local: true) do |form| %>
+  <div class="property_name">
+    <%= form.label :物件名 %>
+    <%= form.text_field :property_name %>
+  </div>
+
+  <div class="rent">
+    <%= form.label :賃料 %>
+    <%= form.text_field :rent %>
+  </div>
+
+  <div class="address">
+    <%= form.label :住所 %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="building_age">
+    <%= form.label :築年数 %>
+    <%= form.text_field :building_age %>
+  </div>
+
+  <div class="note">
+    <%= form.label :備考 %>
+    <%= form.text_field :note %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
