@@ -20,6 +20,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @property = Property.find(params[:id])
   end
 
   def update
@@ -28,7 +29,7 @@ class PropertiesController < ApplicationController
   def destroy
   end
 
-# Private
+private
   def property_params
     params.require(:property).permit(:property_name, :rent, :address, :building_age, :note)
   end
