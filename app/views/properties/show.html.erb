@@ -24,3 +24,17 @@
   <%= @property.note %>
 </p>
 
+<% @transportations.each do |transportation| %>
+
+  <strong>路線名:</strong>
+  <%= transportation.line_name %>
+
+
+  <strong>駅名:</strong>
+  <%= transportation.station_name %>
+
+  <strong>徒歩分数:</strong>
+  <%= transportation.walking_distance %>
+<% end %>
+
+<%= link_to '物件一覧に戻る', properties_path %>
