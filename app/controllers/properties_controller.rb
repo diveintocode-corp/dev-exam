@@ -7,10 +7,13 @@ class PropertiesController < ApplicationController
     @property = Property.new
   end
 
-  def confirm
-  end
-
   def create
+    @property = Property.new(property_params)
+      if @property.save
+        redirect_to properties_path
+      else
+        render :new 
+      end
   end
 
   def edit
@@ -23,5 +26,10 @@ class PropertiesController < ApplicationController
   end
 
   def destroy
+  end
+
+# Private
+  def property_params
+    params.require(:property).permit(:property_name, :rent, :address, :building_age, :note)
   end
 end
