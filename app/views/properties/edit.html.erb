@@ -3,16 +3,4 @@
 
 <%= render 'form', property: @property %>
 <%= link_to '詳細', @property %> |
-
-<%= form_with(model: @property_addition, local: true) do |form| %>
-    <%= form.fields_for :transportations do |s| %>
-        <p>最寄駅3</p>
-        <%= s.label :最寄路線 %>
-        <%= s.text_field :line_name %>
-        <%= s.label :最寄駅名 %>
-        <%= s.text_field :station_name %>
-        <%= s.label :徒歩距離 %>
-        <%= s.number_field :walking_distance %>
-    <% end %>
-<% end %>
 <%= link_to '戻る', properties_path %>
