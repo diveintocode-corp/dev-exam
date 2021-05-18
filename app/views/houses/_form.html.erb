@@ -6,7 +6,7 @@
     <br>
     <%= form.label :賃料 %>
     <br>
-    <p><%= form.text_field :price %>円</p>
+    <p><%= form.number_field :price %>円</p>
     <br>
     <%= form.label :住所 %>
     <br>
@@ -14,7 +14,7 @@
     <br>
     <%= form.label :築年数 %>
     <br>
-    <p><%= form.text_field :age_building %>年</p>
+    <p><%= form.number_field :age_building %>年</p>
     <br>
     <%= form.label :備考 %>
     <br>
@@ -36,7 +36,7 @@
     <br>
     <%= s.label :徒歩分数 %>
     <br>
-    <p><%= s.text_field :minutes_on_foot %>分</p>
+    <p><%= s.number_field :minutes_on_foot %>分</p>
     <% @num += 1 %>
   <% end %>
   <%= form.submit '登録する', class: 'button' %>
