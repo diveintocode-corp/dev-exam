@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  route: MyString
+  nearest_station: MyString
+  foot: MyString
+
+two:
+  route: MyString
+  nearest_station: MyString
+  foot: MyString

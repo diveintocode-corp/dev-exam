@@ -1,0 +1,63 @@
+<%= form_with(model: @estate, local: true) do |form| %>
+  <% if estate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estate.errors.count, "error") %> prohibited this estate from being saved:</h2>
+
+      <ul>
+      <% estate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :'Name of property' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :'Rent' %>
+    <%= form.text_area :rent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :'Address' %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :'Age of building' %>
+    <%= form.number_field :years %>
+  </div>
+
+  <div class="field">
+    <%= form.label :'Notes' %>
+    <%= form.text_area :remarks %>
+  </div>
+ 
+  <%= form.fields_for :stations do |station| %>
+    
+    <h3>Nearest Station<%= station.index + 1 %></h3>
+    
+    
+    <div class="field">
+      <%= station.label :'route of property' %>
+      <%= station.text_field :route %>
+    </div>
+
+    <div class="field">
+     <%= station.label :'Name of station' %>
+     <%= station.text_field :nearest_station %>
+    </div>
+
+    <div class="field">
+     <%= station.label :'foot'%>
+     <%= station.text_field :foot %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit :"Submit"%>
+  </div>
+<% end %>
